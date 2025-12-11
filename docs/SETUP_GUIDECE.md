@@ -22,3 +22,5 @@ cd Boston-AI-Multimodal-System
 
 # 3. Instalar dependências
 pip install -r requirements.txt
+# run
+python main.py
