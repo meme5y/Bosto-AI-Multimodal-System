@@ -1,0 +1,19 @@
+=== BOSTON UNIVERSITY AI SYSTEM ===
+Sample Text File for Testing
+
+This is a demonstration file for the Boston AI Multimodal System.
+
+Features tested:
+- Text analysis
+- Word counting
+- File metadata extraction
+
+Sample data:
+Temperature: 25.3°C, 26.1°C, 24.8°C
+Pressure: 1013 hPa, 1012 hPa, 1014 hPa
+Altitude: 1500m, 1520m, 1490m
+
+Author: Zenildo Caqui
+Project: Aerospace Engineering AI
+University: Boston University
+Date: 2024
