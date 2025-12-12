@@ -1,10 +1,3 @@
-<p align="center">
-  <img src="https://img.shields.io/badge/Python-3.8+-blue?style=for-the-badge&logo=python">
-  <img src="https://img.shields.io/badge/Flask-2.3.3-green?style=for-the-badge&logo=flask">
-  <img src="https://img.shields.io/badge/Termux-Android-brightgreen?style=for-the-badge&logo=android">
-  <img src="https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge">
-</p>
-
 # Bosto-AI-Multimodal-System
 A multimodal AI System for aerospace engineering aplications
 # 🚀 Boston AI Multimodal System
