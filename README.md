@@ -52,7 +52,7 @@ The Boston AI Multimodal System is a comprehensive web application demonstrating
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/Boston-AI-Multimodal-System.git
+https://github.com/meme5y/Bosto-AI-Multimodal-System.git
 cd Boston-AI-Multimodal-System
 
 # Install dependencies
