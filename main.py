@@ -86,32 +86,29 @@ class SistemaUpload:
         }
         return tipos.get(extensao, 'desconhecido')
 
-# Inicializar sistema
 sistema_upload = SistemaUpload()
 
-# Sistema de Chat SIMPLIFICADO
 class SistemaChat:
     def processar_mensagem(self, mensagem):
         mensagem = mensagem.lower()
         
         if any(palavra in mensagem for palavra in ['ola', 'oi', 'hello', 'hi']):
-            return "🎉 Olá! Sou sua AI assistente para o projeto Boston! Como posso ajudá-lo?"
+            return "Olá! Sou sua AI assistente para o projeto Boston! Como posso ajudá-lo?"
         
         elif any(palavra in mensagem for palavra in ['projeto', 'boston', 'universidade']):
-            return "🎓 **SOBRE O PROJETO BOSTON:**\nEste sistema demonstra capacidades técnicas em desenvolvimento de AI multimodal para Engenharia Aeroespacial na Boston University."
+            return "SOBRE O PROJETO BOSTON:\nEste sistema demonstra capacidades técnicas em desenvolvimento de AI multimodal para Engenharia Aeroespacial na Boston University."
         
         elif any(palavra in mensagem for palavra in ['upload', 'arquivo', 'imagem']):
-            return "📁 **PARA FAZER UPLOAD:**\n1. Vá para a aba 'Upload'\n2. Clique em 'Selecionar Arquivos'\n3. Escolha uma imagem ou texto\n4. Ela será analisada automaticamente"
+            return "PARA FAZER UPLOAD:\n1. Vá para a aba 'Upload'\n2. Clique em 'Selecionar Arquivos'\n3. Escolha uma imagem ou texto\n4. Ela será analisada automaticamente"
         
         elif any(palavra in mensagem for palavra in ['analisar', 'analise']):
-            return "🔍 **PARA ANALISAR:**\n1. Faça upload de um arquivo\n2. Vá para 'Análise'\n3. Selecione o arquivo da lista\n4. Veja as informações detalhadas"
+            return "PARA ANALISAR:\n1. Faça upload de um arquivo\n2. Vá para 'Análise'\n3. Selecione o arquivo da lista\n4. Veja as informações detalhadas"
         
         else:
-            return f"🤔 Entendi: '{mensagem}'\n\n💡 **Dicas:**\n• Pergunte sobre 'projeto Boston'\n• Peça ajuda com 'upload'\n• Teste 'análise de arquivos'"
+            return f"Entendi: '{mensagem}'\n\n**Dicas:**\n• Pergunte sobre 'projeto Boston'\n• Peça ajuda com 'upload'\n• Teste 'análise de arquivos'"
 
 sistema_chat = SistemaChat()
 
-# HTML SIMPLIFICADO E FUNCIONAL
 HTML = '''
 <!DOCTYPE html>
 <html>
@@ -300,7 +297,7 @@ HTML = '''
 <body>
     <div class="container">
         <div class="header">
-            <h1>🤖 AI Boston</h1>
+            <h1>pt AI Boston</h1>
             <p>Zenildo Caqui • Termux/Android</p>
         </div>
         
@@ -314,10 +311,10 @@ HTML = '''
         
         <!-- CHAT TAB -->
         <div id="tab0" class="tab-content active">
-            <h2>💬 Conversa com AI</h2>
+            <h2>Conversa com AI</h2>
             <div class="chat-box" id="chatBox">
                 <div class="message ai">
-                    🎉 Olá! Sou sua AI assistente!<br><br>
+                    Olá! Sou sua AI assistente!<br><br>
                     Posso ajudar com:<br>
                     • Explicações sobre o projeto Boston<br>
                     • Análise de arquivos multimodais<br>
@@ -334,16 +331,16 @@ HTML = '''
         
         <!-- UPLOAD TAB -->
         <div id="tab1" class="tab-content">
-            <h2>📁 Upload de Arquivos</h2>
+            <h2>Upload de Arquivos</h2>
             <div class="upload-area">
-                <h3>📤 Selecione arquivos</h3>
+                <h3>Selecione arquivos</h3>
                 <p>Arraste ou clique para selecionar</p>
                 <input type="file" id="fileInput" multiple style="display: none;">
                 <button class="upload-btn" onclick="document.getElementById('fileInput').click()">
-                    📂 Selecionar Arquivos
+                    Selecionar Arquivos
                 </button>
             </div>
-            <h3>📂 Arquivos Carregados</h3>
+            <h3>Arquivos Carregados</h3>
             <div class="file-list" id="fileList">
                 <div style="text-align: center; padding: 20px; color: #666;">
                     Nenhum arquivo carregado
@@ -353,7 +350,7 @@ HTML = '''
         
         <!-- ANALYSIS TAB -->
         <div id="tab2" class="tab-content">
-            <h2>🔍 Análise de Arquivos</h2>
+            <h2>Análise de Arquivos</h2>
             <select id="fileSelect" onchange="analyzeFile()">
                 <option value="">Selecione um arquivo para analisar</option>
             </select>
@@ -366,10 +363,10 @@ HTML = '''
         <div id="tab3" class="tab-content">
             <h2>🛠️ Processamento</h2>
             <button class="upload-btn" onclick="processAI()" style="background: #9b59b6;">
-                🧠 Processar com AI
+                 Processar com AI
             </button>
             <button class="upload-btn" onclick="processImages()" style="background: #e67e22; margin-top: 10px;">
-                🖼️ Processar Imagens
+             Processar imagen 
             </button>
             <div id="processResult" class="analysis-result" style="margin-top: 15px;">
                 <!-- Resultados aparecerão aqui -->
@@ -378,7 +375,7 @@ HTML = '''
         
         <!-- ABOUT TAB -->
         <div id="tab4" class="tab-content">
-            <h2>ℹ️ Sobre o Projeto</h2>
+            <h2>Sobre o Projeto</h2>
             <div style="background: #f8f9fa; padding: 15px; border-radius: 8px;">
                 <p><strong>Objetivo:</strong> Demonstrar capacidades técnicas em desenvolvimento de AI multimodal para Engenharia Aeroespacial na Boston University.</p>
                 <p style="margin-top: 10px;"><strong>Tecnologias:</strong> Python, Flask, Pillow, NumPy</p>
@@ -391,16 +388,13 @@ HTML = '''
     </div>
 
     <script>
-        // Sistema de Tabs
         function showTab(index) {
-            // Atualizar tabs
             document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
             document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
             
             event.target.classList.add('active');
             document.getElementById('tab' + index).classList.add('active');
             
-            // Atualizar dados se necessário
             if (index === 1 || index === 2) {
                 loadFiles();
             }
@@ -409,14 +403,12 @@ HTML = '''
             }
         }
         
-        // Sistema de Chat - FUNCIONAL
         function sendMessage() {
             const input = document.getElementById('userInput');
             const message = input.value.trim();
             
             if (!message) return;
             
-            // Mostrar mensagem do usuário
             const chatBox = document.getElementById('chatBox');
             const userMsg = document.createElement('div');
             userMsg.className = 'message user';
@@ -426,7 +418,6 @@ HTML = '''
             input.value = '';
             chatBox.scrollTop = chatBox.scrollHeight;
             
-            // Enviar para o servidor
             fetch('/chat', {
                 method: 'POST',
                 headers: {
@@ -441,7 +432,6 @@ HTML = '''
                 return response.json();
             })
             .then(data => {
-                // Mostrar resposta da AI
                 const aiMsg = document.createElement('div');
                 aiMsg.className = 'message ai';
                 aiMsg.innerHTML = data.response.replace(/\\n/g, '<br>');
@@ -452,20 +442,18 @@ HTML = '''
                 console.error('Erro:', error);
                 const errorMsg = document.createElement('div');
                 errorMsg.className = 'message ai';
-                errorMsg.textContent = '❌ Erro ao conectar com o servidor';
+                errorMsg.textContent = 'Erro ao conectar com o servidor';
                 chatBox.appendChild(errorMsg);
                 chatBox.scrollTop = chatBox.scrollHeight;
             });
         }
-        
-        // Permitir Enter para enviar
+    
         document.getElementById('userInput').addEventListener('keypress', function(e) {
             if (e.key === 'Enter') {
                 sendMessage();
             }
         });
         
-        // Sistema de Upload
         document.getElementById('fileInput').addEventListener('change', function(e) {
             const files = e.target.files;
             if (files.length === 0) return;
@@ -482,27 +470,25 @@ HTML = '''
             .then(response => response.json())
             .then(data => {
                 if (data.success) {
-                    alert('✅ Upload realizado com sucesso!');
+                    alert('Upload realizado com sucesso!');
                     loadFiles();
                     updateStats();
                 } else {
-                    alert('❌ Erro no upload: ' + data.error);
+                    alert('Erro no upload: ' + data.error);
                 }
             })
             .catch(error => {
-                alert('❌ Erro de conexão');
+                alert('Erro de conexão');
             });
         });
         
-        // Carregar arquivos
         function loadFiles() {
             fetch('/files')
             .then(response => response.json())
             .then(files => {
                 const fileList = document.getElementById('fileList');
                 const fileSelect = document.getElementById('fileSelect');
-                
-                // Limpar
+            
                 fileList.innerHTML = '';
                 fileSelect.innerHTML = '<option value="">Selecione um arquivo para analisar</option>';
                 
@@ -511,7 +497,6 @@ HTML = '''
                     return;
                 }
                 
-                // Listar arquivos
                 files.forEach(file => {
                     // Adicionar à lista
                     const fileItem = document.createElement('div');
@@ -527,7 +512,6 @@ HTML = '''
                     `;
                     fileList.appendChild(fileItem);
                     
-                    // Adicionar ao select
                     const option = document.createElement('option');
                     option.value = file.nome;
                     option.textContent = `${file.nome} (${file.tipo})`;
@@ -539,7 +523,6 @@ HTML = '''
             });
         }
         
-        // Analisar arquivo
         function analyzeFile() {
             const fileName = document.getElementById('fileSelect').value;
             if (!fileName) return;
@@ -548,7 +531,7 @@ HTML = '''
             .then(response => response.json())
             .then(data => {
                 const resultDiv = document.getElementById('analysisResult');
-                let html = '<strong>📊 Análise Detalhada:</strong><br><br>';
+                let html = '<strong>Análise Detalhada:</strong><br><br>';
                 
                 for (const [key, value] of Object.entries(data)) {
                     if (key !== 'nome') {
@@ -559,11 +542,10 @@ HTML = '''
                 resultDiv.innerHTML = html;
             })
             .catch(error => {
-                document.getElementById('analysisResult').innerHTML = '❌ Erro ao analisar arquivo';
+                document.getElementById('analysisResult').innerHTML = 'Erro ao analisar arquivo';
             });
         }
-        
-        // Processar com AI
+    
         function processAI() {
             fetch('/ai_process')
             .then(response => response.json())
@@ -580,7 +562,6 @@ HTML = '''
             });
         }
         
-        // Processar imagens
         function processImages() {
             fetch('/process_images')
             .then(response => response.json())
@@ -593,11 +574,10 @@ HTML = '''
                 }
             })
             .catch(error => {
-                document.getElementById('processResult').innerHTML = '❌ Erro de conexão';
+                document.getElementById('processResult').innerHTML = 'Erro de conexão';
             });
         }
         
-        // Deletar arquivo
         function deleteFile(fileName) {
             if (!confirm('Tem certeza que deseja deletar ' + fileName + '?')) return;
             
@@ -607,26 +587,25 @@ HTML = '''
             .then(response => response.json())
             .then(data => {
                 if (data.success) {
-                    alert('✅ Arquivo deletado com sucesso!');
+                    alert('Arquivo deletado com sucesso!');
                     loadFiles();
                     updateStats();
                 } else {
-                    alert('❌ Erro ao deletar arquivo');
+                    alert('Erro ao deletar arquivo');
                 }
             })
             .catch(error => {
-                alert('❌ Erro de conexão');
+                alert('Erro de conexão');
             });
         }
         
-        // Atualizar estatísticas
         function updateStats() {
             fetch('/stats')
             .then(response => response.json())
             .then(data => {
                 document.getElementById('stats').innerHTML = `
-                    📁 Arquivos: ${data.total_arquivos}<br>
-                    💾 Espaço: ${data.total_tamanho}
+                    Arquivos: ${data.total_arquivos}<br>
+                    Espaço: ${data.total_tamanho}
                 `;
             })
             .catch(error => {
@@ -634,7 +613,6 @@ HTML = '''
             });
         }
         
-        // Inicializar
         window.onload = function() {
             loadFiles();
             updateStats();
@@ -644,7 +622,6 @@ HTML = '''
 </html>
 '''
 
-# ROTAS
 @app.route('/')
 def index():
     return HTML
@@ -654,12 +631,12 @@ def chat():
     try:
         data = request.get_json()
         if not data or 'message' not in data:
-            return jsonify({'response': '❌ Mensagem inválida'}), 400
+            return jsonify({'response': 'Mensagem inválida'}), 400
         
         resposta = sistema_chat.processar_mensagem(data['message'])
         return jsonify({'response': resposta})
     except Exception as e:
-        return jsonify({'response': f'❌ Erro: {str(e)}'}), 500
+        return jsonify({'response': f'Erro: {str(e)}'}), 500
 
 @app.route('/upload', methods=['POST'])
 def upload():
@@ -698,7 +675,6 @@ def files():
         analises = []
         for arquivo in arquivos:
             analise = sistema_upload.analisar_arquivo(arquivo)
-            # Garantir que temos dados básicos
             if 'nome' in analise:
                 analises.append(analise)
         return jsonify(analises)
@@ -716,21 +692,21 @@ def analyze(nome_arquivo):
 @app.route('/ai_process')
 def ai_process():
     try:
-        resultado = """🧠 **PROCESSAMENTO AI REALIZADO**
+        resultado = """**PROCESSAMENTO AI REALIZADO**
 
-✅ **Análise NumPy Concluída!**
+Análise NumPy Concluída!
 
-📊 **ESTATÍSTICAS:**
+ESTATÍSTICAS:
 • Processamento de matrizes otimizado
 • Análise de imagens em tempo real
 • Cálculo de estatísticas descritivas
 
-🚀 **APLICAÇÃO EM AEROESPACIAL:**
+APLICAÇÃO EM AEROESPACIAL:
 - Detecção de mudanças em superfícies
 - Identificação de padrões climáticos
 - Monitoramento de recursos naturais
 
-💻 **Python com NumPy e Pillow**"""
+Python com NumPy e Pillow"""
         return jsonify({'success': True, 'results': resultado})
     except Exception as e:
         return jsonify({'success': False, 'error': str(e)})
@@ -741,16 +717,14 @@ def process_images():
         imagens = sistema_upload.listar_arquivos()
         imagens_filtradas = [f for f in imagens if f.lower().endswith(('.jpg', '.jpeg', '.png', '.gif', '.bmp'))]
         
-        resultado = f"""🖼️ **PROCESSAMENTO DE IMAGENS**
+        resultado = f"""PROCESSAMENTO DE IMAGENS
 
-📁 **Imagens disponíveis:** {len(imagens_filtradas)}
+ Imagens disponíveis: {len(imagens_filtradas)}
 
-🔧 **Técnicas disponíveis:**
 1. Filtros (BLUR, SHARPEN, EDGE)
 2. Ajustes (brilho, contraste)
 3. Transformações (rotação, redimensionamento)
 
-📸 **Para processar:**
 1. Carregue imagens na aba Upload
 2. Selecione na aba Análise
 3. Veja estatísticas detalhadas"""
@@ -781,7 +755,6 @@ def stats():
             if os.path.exists(caminho):
                 total_tamanho += os.path.getsize(caminho)
         
-        # Formatando
         if total_tamanho < 1024:
             tamanho_fmt = f"{total_tamanho} bytes"
         elif total_tamanho < 1024**2:
@@ -798,16 +771,16 @@ def stats():
 
 if __name__ == '__main__':
     print("=" * 60)
-    print("🤖 AI BOSTON - SISTEMA SIMPLIFICADO")
+    print("AI BOSTON - SISTEMA SIMPLIFICADO")
     print("=" * 60)
-    print("Desenvolvido por: Zenildo Caqui")
+    print("Desenvolvido por: Fernando Artur")
     print("Para: Aplicação Boston University")
     print("Ambiente: Termux/Android")
     print("=" * 60)
-    print("📁 Pasta uploads: uploads/")
-    print("🌐 Acesse: http://localhost:5000")
+    print("Pasta uploads: uploads/")
+    print("Acesse: http://localhost:5000")
     print("=" * 60)
-    print("\n💡 Dicas:")
+    print("\nDicas:")
     print("1. O chat agora funciona!")
     print("2. Upload de arquivos funcional")
     print("3. Interface otimizada para Android")
