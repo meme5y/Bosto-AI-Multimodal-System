@@ -1,5 +1,3 @@
-# Bosto-AI-Multimodal-System
-A multimodal AI System for aerospace engineering aplications
 # 🚀 Boston AI Multimodal System
 
 <div align="center">
